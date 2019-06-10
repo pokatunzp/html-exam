@@ -3,34 +3,93 @@ body {
 }
 
 .person {
-  float: left;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
   width: 200px;
+  height: 271px;
+  box-sizing: border-box;
+  font-family: Arial;
+  text-align: center;
+  transition: transform 1s;
 }
 
 .photo img {
-  float: left;
-  width: 200px;
+  height: 200px;
   border-radius: 100px;
+  transition: border-radius 1s;
 }
-.photo .rank {
-  float: left;
-  position: relative;
-  bottom: 116px;
-  padding: 7px 11px;
-  font-family: Arial;
-  font-size: 16px;
-  line-height: 18px;
-  text-align: center;
-  color: #8B0000;
+
+.details .name {
+  font-size: 20px;
+  line-height: 23px;
+  color: #2F4F4F;
+  transition: font-size 1s, line-height 1s;
+}
+.details .extra {
+  display: none;
+  transition: font-size 1s, line-height 1s;
+}
+
+.rank {
+  display: block;
+  position: absolute;
+  top: 84px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
   border-radius: 16px;
-  background-color: #fff;
-  z-index: 1;
+  font-size: 16px;
+  line-height: 32px;
+  color: #8B0000;
+  background: #FFFFFF;
+}
+
+.person:hover {
+  z-index: 10;
+  width: 220px;
+  height: 287px;
+  padding-top: 10px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 1s;
+}
+.person:hover .photo img {
+  border-radius: 60px;
+  transition: border-radius 1s;
+}
+.person:hover .rank {
+  top: 94px;
+  right: 20px;
+}
+.person:hover .name {
+  font-size: 24px;
+  line-height: 28px;
+  transition: font-size 1s, line-height 1s;
+}
+.person:hover .extra {
+  display: block;
+  padding-top: 9px;
+  font-size: 22px;
+  line-height: 25px;
+  color: #000000;
+  transition: font-size 1s, line-height 1s;
 }
 
 .people {
   display: grid;
-  grid-template-columns: repeat(4, 250px);
+  grid-template-columns: repeat(4, 230px);
   justify-content: center;
+  margin: 30px 0 0;
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
+  .people {
+    grid-template-columns: repeat(2, 230px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
